@@ -10,4 +10,5 @@ body{
     font-family: "Mulish", serif;
     color: #252525;
     background-color: #FCFCFC;
+    overflow-x: hidden;
 }

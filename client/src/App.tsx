@@ -5,6 +5,7 @@ import { Route, Router, Routes } from "react-router-dom";
 import Index from './pages/Index';
 import Layout from './components/Layout';
 import Login from './pages/Login';
+import Register from './pages/Register';
 
 
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Layout />}>
             <Route index element={<Index />} /> 
             <Route path='/login' element={<Login />} /> 
+            <Route path='/register' element={<Register />} /> 
           </Route>
       </Routes>
  

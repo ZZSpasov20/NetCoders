@@ -27,6 +27,27 @@ public class ProductController {
         return ReturnJson.success(savedProduct, "Product created successfully");
     }
 
+    // Get all bought products (ordered by newest)
+    @GetMapping("/bought")
+    public ReturnJson<List<Product>> getBoughtProducts() {
+        List<Product> products = productService.getBoughtProducts();
+        return ReturnJson.success(products);
+    }
+
+    // Get all unbought products
+    @GetMapping("/unbought")
+    public ReturnJson<List<Product>> getUnboughtProducts() {
+        List<Product> products = productService.getUnboughtProducts();
+        return ReturnJson.success(products);
+    }
+
+    // Mark product as bought
+    @PostMapping("/buy/{id}")
+    public ReturnJson<Product> buyProduct(@PathVariable Long id) {
+        Product product = productService.buyProduct(id);
+        return ReturnJson.success(product, "Product marked as bought.");
+    }
+
     // Get all products
     @GetMapping("/all")
     public ReturnJson<List<Product>> getAllProducts() {

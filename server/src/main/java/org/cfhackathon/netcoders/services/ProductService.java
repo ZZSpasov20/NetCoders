@@ -5,6 +5,7 @@ import org.cfhackathon.netcoders.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,6 +26,22 @@ public class ProductService {
     // Get all products
     public List<Product> getAllProducts() {
         return productRepository.findAll();
+    }
+
+    // Get all bought products (Newest first)
+    public List<Product> getBoughtProducts() {
+        return productRepository.findByBoughtDateIsNotNullOrderByBoughtDateDesc();
+    }
+
+    // Get all unbought products
+    public List<Product> getUnboughtProducts() {
+        return productRepository.findByBoughtDateIsNull();
+    }
+
+    public Product buyProduct(Long productId) {
+        Product product = productRepository.findById(productId).orElseThrow(() -> new RuntimeException("Product not found"));
+        product.setBoughtDate(LocalDateTime.now());
+        return productRepository.save(product);
     }
 
     // Get a single product by ID

@@ -32,6 +32,7 @@ public class UserController {
     public ReturnJson<UserResponse> getCurrent(Authentication authentication){
         UserResponse userResponse = new UserResponse();
         User user = authService.getUserByToken(authentication);
+        userResponse.setId(user.getId());
         userResponse.setEmail(user.getEmail());
         userResponse.setFirstName(user.getFirstName());
         userResponse.setLastName(user.getLastName());

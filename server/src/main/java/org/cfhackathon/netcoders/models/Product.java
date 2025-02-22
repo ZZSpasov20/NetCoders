@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "Products")
 @Getter
@@ -24,4 +26,7 @@ public class Product {
 
     @Column(name = "Price", nullable = false)
     private String priceType; // ("Affordable", "Reasonable", "Pricey")
+
+    @Column(name = "BoughtDate", nullable = true)
+    private LocalDateTime boughtDate;
 }

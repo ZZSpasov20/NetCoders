@@ -27,7 +27,6 @@ public class AuthController {
         return ReturnJson.success(null, "User registered successfully");
     }
 
-
     @PostMapping("/login")
     public ReturnJson<String> login(@RequestBody LoginRequest loginRequest) {
         if(authService.authenticate(loginRequest.getEmail(), loginRequest.getPassword())){

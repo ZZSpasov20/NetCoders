@@ -33,4 +33,8 @@ public class User {
     @JoinColumn(name = "family_id")
     @JsonBackReference
     private Family family;
+
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonBackReference // Prevents JSON recursion
+    private Favorites favorites;
 }

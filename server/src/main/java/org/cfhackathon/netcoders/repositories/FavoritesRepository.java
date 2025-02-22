@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
 
-public interface FavouritesRepository extends JpaRepository<Favorites, Long> {
+public interface FavoritesRepository extends JpaRepository<Favorites, Long> {
     Optional<Favorites> findByUser(User user);
 }

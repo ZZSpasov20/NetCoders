@@ -1,5 +1,6 @@
 import { useState } from "react";
 import backButton from "./../assets/backArrow.png";
+import { Link } from "react-router-dom";
 
 export default function Profile() {
   const [view, setView] = useState<"profile" | "history" | "family">("profile");
@@ -56,9 +57,9 @@ export default function Profile() {
 
           {/* Logout Button */}
           <div className="absolute bottom-6 w-full px-6 flex  justify-center max-w-[350px]">
-            <button className="border border-orange-500 text-orange-500 w-full py-3 rounded-lg text-lg m-auto">
+           <Link to="/" className="flex  py-3  max-w-[350px] w-full"><button className="border border-orange-500 text-orange-500 w-full py-3 rounded-lg text-lg m-auto">
               Logout
-            </button>
+            </button></Link> 
           </div>
         </>
       )}

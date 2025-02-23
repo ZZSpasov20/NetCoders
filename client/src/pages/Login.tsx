@@ -49,7 +49,7 @@ export default function Login() {
           >
          
             <div className="relative w-full h-full flex items-center justify-center  flex-col">
-              <h1 className="text-5xl font-bold text-white">GrociriEast</h1>
+              <h1 className="text-5xl font-bold text-white">GrocierEase</h1>
               <div 
                 className="w-[72px] h-[72px] bg-[#F4B85E] flex justify-center items-center rounded-full cursor-pointer absolute bottom-36"
                 onClick={() => setIsAnimating(false)} // ✅ Close animation when clicked

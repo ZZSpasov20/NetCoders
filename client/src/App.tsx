@@ -11,6 +11,8 @@ import Home from './pages/Home';
 import Favourites from './pages/Favourites';
 import List from './pages/List';
 import Profile from './pages/Profile';
+import MonitoringHome from './pages/MonitoringHome';
+import MoreInfo from './pages/MoreInfo';
 function App() {
 
   return (
@@ -29,6 +31,8 @@ function App() {
             <Route path="/app/list" element={<List />} ></Route>
           </Route>
           <Route path="/profile" element={<Profile></Profile>}></Route>
+          <Route path="/monitoring/home" element={<MonitoringHome></MonitoringHome>}></Route>
+          <Route path="/monitoring/more-info" element={<MoreInfo></MoreInfo>}></Route>
       </Routes>
  
     </>

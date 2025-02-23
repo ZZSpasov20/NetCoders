@@ -20,7 +20,7 @@ export default function Nav() {
         </Link>
        
        <Link to="/app/favourite"><img src={Heart} alt="" className="h-8" /></Link> 
-        <img src={Profile} alt="" className="h-8" />
+       <Link to="/profile"> <img src={Profile} alt="" className="h-8" /></Link>
 
    </nav>); 
 }
